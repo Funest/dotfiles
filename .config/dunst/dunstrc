@@ -1,0 +1,31 @@
+[global]
+    # Shape
+    gap_size = 0 
+    corner_radius = 15
+    frame_width = 0
+    padding=20
+    horizontal_padding=20
+    min_icon_size=16
+    max_icon_size=128
+
+    # Colors
+    background = "#282A36"
+    foreground = "#F8F8F2"
+    frame_color = "#FF79C6"
+    highlight = "#FF79C6"
+
+   # Test discord?
+
+[urgency_critical]
+    background = "#FF5555"
+    frame_color = "#FFB86C"
+    highlight = "#FFB86C"
+
+[urgency_normal]
+    foreground = "#BD93F9"
+
+[urgency_low]
+    foreground = "#6272A4"
+    frame_color = "#6272A4"
+    highlight = "#6272A4"
+

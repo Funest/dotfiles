@@ -1,0 +1,5 @@
+$include /etc/inputrc
+
+# Arrows search backwards/forwards
+"\e[A":history-search-backward
+"\e[B":history-search-forward

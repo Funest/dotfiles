@@ -1,0 +1,15 @@
+# colors, because I still can
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+# git dotfile backup thing
+alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+# writing thesis
+thesisname="TCC"
+thesisdir="~/MEGAsync/TCC/TCC"
+thesispdf="$thesisdir/out/TCC-Guilherme-Felix/TCC-Guilherme-Felix.pdf"
+alias thesistime="cd $thesisdir && /usr/bin/evince $thesispdf > /dev/null 2>&1 &! tmux attach-session -t $thesisname || tmux new-session -s $thesisname"
+
+# Jupyter
+alias jlab="/home/funest/python_venvs/notebooks-and-plots/bin/jupyter lab"
