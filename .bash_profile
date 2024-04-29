@@ -8,3 +8,6 @@ fi
 if [[ -z "$XDG_RUNTIME_DIR" ]]; then
 	export XDG_RUNTIME_DIR=$(mktemp -d /tmp/$UID-runtime-dir.XXX)
 fi
+
+export XDG_DATA_HOME="${HOME}/.local/share/"
+export XDG_CONFIG_HOME="${HOME}/.config/"
