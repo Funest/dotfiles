@@ -1,0 +1,23 @@
+#!/bin/bash
+
+options=$(echo -e "  Poweroff\n  Restart\n  Suspend\n  Exit qtile")
+
+selected_option=$(echo -e "$options" \
+    | rofi -location 3 \
+           -theme-str 'window {width: 200;} listview {lines: 4;}' \
+           -yoffset 50 -xoffset -10 \
+           -dmenu -i -mesg "Leaving already?")
+
+case $selected_option in
+    "  Poweroff")
+        notify-send " Shutting down..."
+        systemctl poweroff;;
+    "  Restart")
+        notify-send " Rebooting..."
+        systemctl reboot;;
+    "  Suspend")
+        notify-send " Suspending..."
+        systemctl suspend;;
+    "  Exit qtile")
+        qtile cmd-obj -o cmd -f shutdown;;
+esac
