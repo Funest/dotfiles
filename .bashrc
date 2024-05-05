@@ -12,6 +12,7 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=3000
+export HISTCONTROL="$HISTCONTROL erasedups:ignoreboth"
 
 # update size of window, because resizing happens
 shopt -s checkwinsize
