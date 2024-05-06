@@ -182,5 +182,5 @@ exec --no-startup-id polybar example2
 
 
 # Screenshot
-bindsym --release Print exec --no-startup-id ~/scripts/screenshot.sh select
+bindsym --release Print exec --no-startup-id ~/.scripts/screenshot.sh select
 
