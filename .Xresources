@@ -1,3 +1,4 @@
+! ------
 ! Catppuccin Frappé Colorscheme
 *.cursorColor: #F2D5CF
 *background: #303446
@@ -34,6 +35,9 @@
 ! white
 *color7: #B5BFE2
 *color15: #A5ADCE
+! ------
+! end colorscheme
+! ------
 
 ! xterm
 xterm*faceName: AgaveNerdFontMono
@@ -47,3 +51,6 @@ URxvt.letterSpace:      -1.5
 URxvt.scrollBar:        false
 ! if the scroll bar is left active, may it be pretty:
 URxvt.scrollstyle:      plain
+
+# Window Manager
+Xcursor.theme: Adwaita
