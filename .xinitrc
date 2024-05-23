@@ -1,5 +1,4 @@
 xrdb .Xresources
-xrandr --output HDMI-A-0 --left-of DisplayPort-0
 picom -b --backend glx &
 
 mega-sync
