@@ -6,10 +6,7 @@ alias grep='grep --color=auto'
 alias dots="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 # writing thesis
-thesisname="TCC"
-thesisdir="~/MEGAsync/TCC/TCC"
-thesispdf="$thesisdir/out/TCC-Guilherme-Felix/TCC-Guilherme-Felix.pdf"
-alias thesistime="cd $thesisdir && /usr/bin/evince $thesispdf > /dev/null 2>&1 &! tmux attach-session -t $thesisname || tmux new-session -s $thesisname"
+alias thesis-time="/home/funest/.scripts/thesis-time.sh"
 
 # Jupyter
 alias jlab="/home/funest/python_venvs/notebooks-and-plots/bin/jupyter lab"
