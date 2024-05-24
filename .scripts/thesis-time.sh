@@ -19,10 +19,10 @@ if [[ -z $EDITOR ]]; then
 fi
 
 tmux new-session -d -c "$THESIS_DIR" -s "$THESIS_NAME" -n "preview" "$PDF_PREVIEWER $THESIS_FILE.pdf"
-tmux move-window -t 10
-tmux split-window -h -c "$THESIS_DIR" "latexmk -xelatex -pvc"
-tmux new-window -c "$THESIS_DIR" -n "write" "$EDITOR $THESIS_FILE.tex" 
-tmux new-window -d -c "$THESIS_DIR"
+tmux move-window -s "$THESIS_NAME:1" -t "$THESIS_NAME:10"
+tmux split-window -t "$THESIS_NAME:10" -h -c "$THESIS_DIR" "latexmk -xelatex -pvc"
+tmux new-window -t "$THESIS_NAME:1" -c "$THESIS_DIR" -n "write" "$EDITOR $THESIS_FILE.tex" 
+tmux new-window -t "$THESIS_NAME:2" -d -c "$THESIS_DIR"
 
 case $1 in 
     "setup")
