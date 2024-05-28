@@ -187,9 +187,10 @@ bindsym $mod+Ctrl+Right resize grow width 10 px or 10 ppt
 exec --no-startup-id polybar example
 exec --no-startup-id polybar example2
 
-
-# Screenshot
-bindsym --release Print exec --no-startup-id ~/.scripts/screenshot.sh select
+# Screenshots
+bindsym --release Print exec --no-startup-id ~/.scripts/screenshot.sh -c select
+bindsym --release Shift+Print exec --no-startup-id ~/.scripts/screenshot.sh -c current
+bindsym --release Ctrl+Print exec --no-startup-id ~/.scripts/screenshot.sh -c root
 
 # Float matlab figures and scopes (QoL)
 for_window [class="^MATLAB*" title="^Figure*|^Scope*"] floating enable
