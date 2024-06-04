@@ -49,8 +49,6 @@ if [ -v PRINT_HELP ]; then
     exit
 fi
 
-echo "a"
-
 if ! [ -v OUTFILE ]; then
     OUTFILE=$(mktemp /tmp/scrsht.XXXXXXX.png)
 fi
@@ -80,16 +78,3 @@ fi
 if [ -v XDG_OPEN ]; then
     xdg-open "$OUTFILE"
 fi
-
-#if [ -a $OUTFILE ]; then
-#    echo "$OUTFILE"
-#    xdg-open "$OUTFILE"
-#fi
-
-#if [ "$1" = "select" ]; then
-#    magick x: png:- | xclip -t image/png -se c -i
-#elif [ "$1" = "current" ]; then
-#    id=$(xprop -root _NET_ACTIVE_WINDOW | sed 's/.* //')
-#    magick "x:$id" png:- | xclip -t image/png -se c -i
-#elif [ "$1" = "all"
-#fi
