@@ -58,7 +58,7 @@ floating_modifier $mod
 #tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec ~/.scripts/urxvt-auto-daemon.sh
 
 # kill focused window
 bindsym $mod+w kill
