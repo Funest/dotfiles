@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ $# -lt 1 ]; then
+    PRINT_HELP=1
+fi
+
 while [ $# -ge 1 ]; do
     case $1 in
         -h|--help)
