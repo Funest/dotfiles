@@ -5,6 +5,7 @@ configuration {
 
 // Appearance:
     font: "Ubuntu 12";
+    monitor: -1;
 
     // Icons and symbols:
     show-icons: true;
