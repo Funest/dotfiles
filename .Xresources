@@ -52,5 +52,5 @@ URxvt.scrollBar:        false
 ! if the scroll bar is left active, may it be pretty:
 URxvt.scrollstyle:      plain
 
-# Window Manager
+! Window Manager
 Xcursor.theme: Adwaita
