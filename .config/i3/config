@@ -191,7 +191,7 @@ bindsym --release Shift+Print exec --no-startup-id ~/.scripts/screenshot.sh -c c
 bindsym --release Ctrl+Print exec --no-startup-id ~/.scripts/screenshot.sh -c root
 
 # Float matlab figures and scopes (QoL)
-for_window [class="^MATLAB*" title="^Figure*|^Scope*"] floating enable
+for_window [class="^MATLAB*|^matplotlib*" title="^Figure*|^Scope*"] floating enable
 
 # Don't teleport my mouse to other screen
 mouse_warping none
@@ -200,3 +200,8 @@ mouse_warping none
 bindsym $mod+Shift+m move scratchpad
 bindsym $mod+Ctrl+m [floating] move scratchpad
 bindsym $mod+m scratchpad show
+
+# Gaps
+gaps inner 10
+gaps outer 0
+smart_gaps off
