@@ -24,10 +24,18 @@ shopt -s globstar
 set -o noclobber
 
 # my prompt
-PS1='\[\033[0;34m\]\u@\h\[\033[00m\]:\[\033[0;36m\]\w\[\033[00m\]\$ '
-
-# set title to user:dir
-PS1="\[\e]0;\u:\w\a\]$PS1"
+# PS1='\[\033[0;34m\]\u@\h\[\033[00m\]:\[\033[0;36m\]\w\[\033[00m\]\n\$ '
+_ps1_prompt () {
+    ret=$?
+    if [ $ret -ne 0 ]; then
+        printf "[\e[0;31m$ret\e[0;0m] "
+    fi
+    printf "\n\$ "
+}
+_PS1_USER='\e[0;32m\]\u\e[0;0m\]'
+_PS1_HOST='\e[0;35m\]\h\e[0;0m\]'
+_PS1_PWD='\e[0;36m\]\w\e[0;0m\]'
+PS1="$_PS1_USER@$_PS1_HOST:$_PS1_PWD	\$(_ps1_prompt)"
 
 # my aliases
 source $HOME/.shellaliases
