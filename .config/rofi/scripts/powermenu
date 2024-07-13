@@ -1,14 +1,17 @@
 #!/bin/bash
 
-options=$(echo -e "  Poweroff\n  Restart\nSuspend\n  Exit i3")
+options=$(echo -e "󰍹  Turn off screen\n  Poweroff\n  Restart\nSuspend\n  Exit i3")
 
 selected_option=$(echo -e "$options" \
     | rofi -location 3 \
-           -theme-str 'window {width: 200;} listview {lines: 4;}' \
+           -theme-str 'window {width: 200;} listview {lines: 5;}' \
            -yoffset 50 -xoffset -10 \
            -dmenu -i -mesg "Leaving already?")
 
 case $selected_option in
+    "󰍹  Turn off screen")
+        sleep 1
+        xset dpms force off;;
     "  Poweroff")
         notify-send " Shutting down..."
         loginctl poweroff;;
