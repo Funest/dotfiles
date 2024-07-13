@@ -24,8 +24,6 @@ set nu cul rnu
 hi CursorLine ctermbg=Black cterm=none 
 hi CursorLineNr cterm=none ctermbg=DarkGrey
 
-" TODO: cusomize status line
-
 " " vim-plug stuff
 " call plug#begin('~/.vim/plugged')
 " 
