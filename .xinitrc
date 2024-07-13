@@ -4,6 +4,6 @@ picom -b --backend glx &
 mega-sync
 playerctld daemon
 urxvtd --quiet --opendisplay --fork
-export TERMINAL="urxvtc"
+export TERMINAL="st"
 
 exec dbus-launch --exit-with-session i3

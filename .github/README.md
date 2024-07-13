@@ -8,7 +8,7 @@ Dotfiles and configurations for Funest's [gentoo](https://gentoo.org) desktop
     * **Status bar** -- [polybar](https://github.com/polybar/polybar);
     * **Application launcher (and power menu)** -- [rofi](https://github.com/davatorium/rofi);
     * **Notification daemon** -- [dunst](https://dunst-project.org/).
-* **Terminal emulator** -- [rxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html);
+* **Terminal emulator** -- [st](https://st.suckless.org/);
     * **Terminal multiplexer** -- [tmux](https://github.com/tmux/tmux/wiki);
 * **Shell** -- [bash](https://www.gnu.org/software/bash/);
 * **Editor** -- [neovim](https://neovim.io/).
