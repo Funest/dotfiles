@@ -7,6 +7,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Written in blood:
+set noautoread
+
 " Compilation shortcut
 nnoremap <F5> :w :make!
 
