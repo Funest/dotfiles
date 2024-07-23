@@ -1,6 +1,6 @@
 #!/bin/bash
 
-options=$(echo -e "  Poweroff\n  Restart\n  Suspend\n  Exit qtile")
+options=$(echo -e "  Poweroff\n  Restart\nSuspend\n  Exit i3")
 
 selected_option=$(echo -e "$options" \
     | rofi -location 3 \
@@ -11,13 +11,13 @@ selected_option=$(echo -e "$options" \
 case $selected_option in
     "  Poweroff")
         notify-send " Shutting down..."
-        systemctl poweroff;;
+        loginctl poweroff;;
     "  Restart")
         notify-send " Rebooting..."
-        systemctl reboot;;
-    "  Suspend")
+        loginctl reboot;;
+    "Suspend")
         notify-send " Suspending..."
-        systemctl suspend;;
-    "  Exit qtile")
-        qtile cmd-obj -o cmd -f shutdown;;
+        loginctl suspend;;
+    "  Exit i3")
+        i3-msg exit;;
 esac
