@@ -1,0 +1,12 @@
+# XDG autostart with dex
+exec --no-startup-id dex --autostart --environment i3
+
+# playerctd makes play/pause work as expected
+# should be started after i3 is running
+exec --no-startup-id playerctld daemon
+
+# Status bars
+exec --no-startup-id polybar main-screen
+exec --no-startup-id polybar off-screen
+
+# vim:ft=i3config

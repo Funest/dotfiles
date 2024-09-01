@@ -1,0 +1,40 @@
+######## title bar and border #########
+font pango:Agave Nerd Font 10
+title_align center
+default_border pixel 2
+
+######## gaps #########
+gaps inner 10
+gaps outer 0
+smart_gaps off
+
+######## colors #########
+# gruvbox dark pallete
+set $gb_bg #282828
+set $gb_bg1 #3c3836
+set $gb_fg #ebdbb2
+set $gb_gray #a89984
+set $gb_bright_gray #928374
+set $gb_red #cc241d
+set $gb_bright_red #fb4934
+set $gb_green #98971a
+set $gb_bright_green #b8bb26
+set $gb_yellow #d79921
+set $gb_bright_yellow #fabd2f
+set $gb_blue #458588
+set $gb_bright_blue #83a598
+set $gb_purple #b16286
+set $gb_bright_purple #d3869b
+set $gb_aqua #689d6a
+set $gb_bright_aqua #8ec07c
+set $gb_orange #d65d0e
+set $gb_bright_orange #fe8019
+
+# Setting the colors
+# class                 title border    title bg        text    indicator       border
+client.focused          $gb_yellow      $gb_yellow      $gb_bg  $gb_bright_red  $gb_yellow
+client.focused_inactive $gb_gray        $gb_gray        $gb_bg  $gb_gray        $gb_gray
+client.unfocused        $gb_bg1         $gb_bg          $gb_fg  $gb_bg          $gb_bg
+client.urgent           $gb_bright_red  $gb_bright_red  $gb_bg  $gb_bright_red  $gb_bright_red
+
+# vim:ft=i3config
