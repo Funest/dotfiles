@@ -39,13 +39,13 @@ local function modified_status()
     local readonlystatus = ""
     local modifiedstatus = "" 
     if vim.o.readonly then
-        readonlystatus = "READONLY"
+        readonlystatus = "readonly"
     end
     if vim.o.modified then
-        modifiedstatus = "MODIFIED"
+        modifiedstatus = "modified"
         readonlystatus = (readonlystatus ~= "" and {readonlystatus .. ", "} or {""})[1]
     end
-    return string.format("%s%s", readonlystatus, modifiedstatus)
+    return string.format(" %s%s ", readonlystatus, modifiedstatus)
 end
 
 
@@ -66,7 +66,7 @@ local function setup()
     vim.api.nvim_exec(colorsstring, false)
 
     -- Autocommand
-    local refreshevents = "WinEnter,BufEnter,SessionLoadPost,FileChangedShellPost,VimResized,Filetype,CursorMoved,CursorMovedI,ModeChanged"
+    local refreshevents = "WinEnter,BufEnter,BufModifiedSet,OptionSet,SessionLoadPost,FileChangedShellPost,VimResized,Filetype,CursorMoved,CursorMovedI,ModeChanged"
     vim.api.nvim_exec(string.format("autocmd %s * call v:lua.require('bar').refresh()", refreshevents), false)
 end
 
@@ -82,7 +82,7 @@ local function refresh()
         ' %{&filetype==""?"?":&filetype} ',
         '%#FileTypeBlockEnd#',
         triangles.rightsolid,
-        '%#FileBlock#',
+        '%<%#FileBlock#',
         ' %f ',
         '%#FileBlockEnd#',
         triangles.rightsolid,
