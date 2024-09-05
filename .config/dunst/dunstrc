@@ -2,30 +2,25 @@
     # Shape
     gap_size = 0 
     corner_radius = 15
-    frame_width = 0
+    frame_width = 2
     padding=20
     horizontal_padding=20
     min_icon_size=16
     max_icon_size=128
 
     # Colors
-    background = "#282A36"
-    foreground = "#F8F8F2"
-    frame_color = "#FF79C6"
-    highlight = "#FF79C6"
-
-   # Test discord?
+    background = "#282828"
+    foreground = "#ebdbb2"
+    frame_color = "#ebdbb2"
+    highlight = "#b8bb26"
 
 [urgency_critical]
-    background = "#FF5555"
-    frame_color = "#FFB86C"
-    highlight = "#FFB86C"
-
-[urgency_normal]
-    foreground = "#BD93F9"
+    foreground = "#fe8019"
+    frame_color = "#fe8019"
+    highlight = "#fe8019"
 
 [urgency_low]
-    foreground = "#6272A4"
-    frame_color = "#6272A4"
-    highlight = "#6272A4"
+    foreground = "#928374"
+    frame_color = "#928374"
+    highlight = "#928374"
 

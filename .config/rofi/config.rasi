@@ -16,30 +16,28 @@ configuration {
 
 * {
     /* Dracula theme colour palette */
-    drac-bgd: #282a36;
-    drac-cur: #44475a;
-    drac-fgd: #f8f8f2;
-    drac-cmt: #6272a4;
-    drac-cya: #8be9fd;
-    drac-grn: #50fa7b;
-    drac-ora: #ffb86c;
-    drac-pnk: #ff79c6;
-    drac-pur: #bd93f9;
-    drac-red: #ff5555;
-    drac-yel: #f1fa8c;
+    gruv-bg: #282828;
+    gruv-fg: #ebdbb2;
+    gruv-red: #cc241d;
+    gruv-grn: #b8bb26;
+    gruv-yel: #d79921;
+    gruv-blu: #458588;
+    gruv-pur: #b16286;
+    gruv-aqu: #689d6a;
+    gruv-gra: #a89984;
 
 
-    foreground: @drac-fgd;
-    background-color: @drac-bgd;
-    active-background: @drac-pnk;
-    urgent-background: @drac-red;
-    urgent-foreground: @drac-bgd;
+    foreground: @gruv-fg;
+    background-color: @gruv-bg;
+    active-background: @gruv-pur;
+    urgent-background: @gruv-red;
+    urgent-foreground: @gruv-bg;
     
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
     separatorcolor: @active-background;
-    bordercolor: #6272a4;
+    bordercolor: @gruv-fg;
 }
 
 configuration {
@@ -48,13 +46,13 @@ configuration {
 
 #window {
     background-color: @background-color;
-    border:           0;
+    border:           2px;
     border-radius:    6;
     border-color:     @bordercolor;
     width: 500;
 }
 #mainbox {
-    border:  0;
+    border:  0px;
     padding: 0;
 }
 #message {
@@ -92,8 +90,8 @@ configuration {
     text-color:       @background-color;
 }
 #element.selected.normal {
-    background-color: @selected-background;
-    text-color:       @foreground;
+    background-color: @foreground;
+    text-color:       @background-color;
 }
 #element.selected.urgent {
     background-color: @selected-urgent-background;
@@ -140,24 +138,20 @@ configuration {
 }
 #entry {
     spacing:    0;
-    text-color: @drac-cya;
+    text-color: @gruv-aqu;
     placeholder: "";
-}
-#prompt {
-    spacing:    0;
-    text-color: @drac-grn;
 }
 #inputbar {
     children:   [ textbox-prompt-colon, entry ];
-    border:     0 0 1 dash 0;
-    border-color: @drac-yel;
+    border:     0 0 0 dash 0;
+    border-color: @gruv-yel;
     padding: 5px;
 }
 #textbox-prompt-colon {
     expand:     false;
     str:        ">";
     margin:     0 10 0em 6 ;
-    text-color: @drac-grn;
+    text-color: @gruv-grn;
 }
 element-text, element-icon {
     background-color: inherit;
