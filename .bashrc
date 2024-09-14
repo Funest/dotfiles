@@ -24,18 +24,39 @@ shopt -s globstar
 set -o noclobber
 
 # my prompt
-# PS1='\[\033[0;34m\]\u@\h\[\033[00m\]:\[\033[0;36m\]\w\[\033[00m\]\n\$ '
 _ps1_prompt () {
-    ret=$?
-    if [ $ret -ne 0 ]; then
-        printf "[\e[0;31m$ret\e[0;0m] "
+    # Return value
+    RETVALUE=$?
+    if [ $RETVALUE -ne 0 ]; then
+        PS1_RETURN="$RETVALUE"
+    else
+        PS1_RETURN=
     fi
+
+    # Prompt element(s)
+    CURR_DIR=${PWD/#\/home\/funest/\~}
+
+    # Colorless prompt, for width information
+    COLORLESS_LEFT="$USER@$HOSTNAME:$CURR_DIR"
+    WIDTH="$(($COLUMNS - ${#COLORLESS_LEFT}))"
+
+    # Colors
+    GREEN_FG=$(tput setaf 2)
+    MAGENTA_FG=$(tput setaf 5)
+    CYAN_FG=$(tput setaf 6)
+    RED_FG=$(tput setaf 1)
+    NORMAL_FG=$(tput sgr0)
+
+    # Print prompt
+    # Left
+    printf "$GREEN_FG%s$NORMAL_FG@$MAGENTA_FG%s$NORMAL_FG:$CYAN_FG%s"\
+        "$USER" "$HOSTNAME" "$CURR_DIR"
+    # Right
+    printf "$RED_FG%${WIDTH}s$NORMAL_FG" "$PS1_RETURN"
+    # Second line
     printf "\n\$ "
 }
-_PS1_USER='\e[0;32m\]\u\e[0;0m\]'
-_PS1_HOST='\e[0;35m\]\h\e[0;0m\]'
-_PS1_PWD='\e[0;36m\]\w\e[0;0m\]'
-PS1="$_PS1_USER@$_PS1_HOST:$_PS1_PWD	\$(_ps1_prompt)"
+PS1='$(_ps1_prompt)'
 
 # my aliases
 source $HOME/.shellaliases
