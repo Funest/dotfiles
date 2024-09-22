@@ -1,4 +1,3 @@
-" TODO:MODIFIED hangs after save?
 " Funest's Neovim config
 set nocompatible
 " Make it so TABs don't suck
@@ -35,6 +34,10 @@ hi CursorLineNr cterm=none ctermbg=DarkGrey
 " 
 " call plug#end()
 " 
+
+" Colors
+colorscheme gruvbox
+
 " Call my custom statusline
 lua require('bar').setup()
 
